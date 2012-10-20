@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.example.my.first.app.R.id"/>
+<fullyQualifiedTypeName name="android.content.BroadcastReceiver"/>
+<fullyQualifiedTypeName name="com.stevehaar.adkUtils.UsbBroadcastReceiver"/>
+<fullyQualifiedTypeName name="java.util.EventObject"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="com.stevehaar.adkUtils.Configuration"/>
+<fullyQualifiedTypeName name="com.stevehaar.adkUtils.UsbSignalReceivedEvent"/>
+<fullyQualifiedTypeName name="com.stevehaar.adkUtils.UsbSignalReceivedListener"/>
+<fullyQualifiedTypeName name="com.stevehaar.adkutils.UsbBroadcastReceiver"/>
+<fullyQualifiedTypeName name="com.android.future.usb.UsbAccessory"/>
+<fullyQualifiedTypeName name="com.android.future.usb.UsbManager"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="android.content.ComponentName"/>
+<fullyQualifiedTypeName name="android.appwidget.AppWidgetManager"/>
+<fullyQualifiedTypeName name="android.widget.RemoteViews"/>
+<fullyQualifiedTypeName name="com.stevehaar.testapp.R"/>
+<fullyQualifiedTypeName name="android.view.View"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="com.stevehaar.robot.Robot"/>
+<fullyQualifiedTypeName name="com.stevehaar.adkutils.UsbListener"/>
+<fullyQualifiedTypeName name="com.stevehaar.robot.RobotCommand"/>
+<fullyQualifiedTypeName name="com.stevehaar.robot.RobotBroadcastReceiver"/>
+<fullyQualifiedTypeName name="com.stevehaar.robot.RobotEvent"/>
+<fullyQualifiedTypeName name="com.stevehaar.robot.RobotListener"/>
+<fullyQualifiedTypeName name="android.widget.SeekBar"/>
+<fullyQualifiedTypeName name="com.stevehaar.testapp.R.id"/>
+<fullyQualifiedTypeName name="android.widget.EditText"/>
+<fullyQualifiedTypeName name="android.view.Display"/>
+<fullyQualifiedTypeName name="android.graphics.Point"/>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="com.mejdl.robot.tracker.GlobalVar"/>
+</qualifiedTypeNameHistroy>
