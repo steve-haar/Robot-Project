@@ -16,14 +16,9 @@ import android.view.Window;
 public class Sample1Java extends Activity {
     private static final String TAG = "Sample::Activity";
 
-    public static final int     VIEW_MODE_RGBA_TEMPLATE  = 0;
-    public static final int     VIEW_MODE_RGBA_TRACKING  = 1;
-
-	private static final int VIEW_MODE_RGBATEMPLATE = 0;
-    private MenuItem            mItemPreviewRGBATEMPLATE;
-    private MenuItem            mItemPreviewRGBATRACKING;
-
-    public static int           viewMode        = VIEW_MODE_RGBA_TEMPLATE;
+    private MenuItem            mItemPreviewRGBA;
+    private MenuItem            mItemPreviewGray;
+    private MenuItem            mItemPreviewCanny;
     private Sample1View         mView;
 
     private BaseLoaderCallback  mOpenCVCallBack = new BaseLoaderCallback(this) {
@@ -34,7 +29,7 @@ public class Sample1Java extends Activity {
 				{
 					Log.i(TAG, "OpenCV loaded successfully");
 					// Create and set View
-					mView = new Sample1View(mAppContext , getWindowManager().getDefaultDisplay());
+					mView = new Sample1View(mAppContext);
 					setContentView(mView);
 					// Check native OpenCV camera
 					if( !mView.openCamera() ) {
@@ -101,21 +96,26 @@ public class Sample1Java extends Activity {
         	Log.e(TAG, "Cannot connect to OpenCV Manager");
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         Log.i(TAG, "onCreateOptionsMenu");
-        mItemPreviewRGBATEMPLATE = menu.add("To Select Object");
-        mItemPreviewRGBATRACKING = menu.add("To Strat Tracking");
+        mItemPreviewRGBA = menu.add("Preview RGBA");
+        mItemPreviewGray = menu.add("Preview GRAY");
+        mItemPreviewCanny = menu.add("Canny");
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Log.i(TAG, "Menu Item selected " + item);
-        if (item == mItemPreviewRGBATEMPLATE)
-            mView.setViewMode(Sample1View.VIEW_MODE_RGBA_TEMPLATE);
-        else if (item == mItemPreviewRGBATRACKING)
-        	mView.setViewMode(Sample1View.VIEW_MODE_RGBA_TRACKING);
+        if (item == mItemPreviewRGBA) {
+        	mView.setViewMode(Sample1View.VIEW_MODE_RGBA);
+        } else if (item == mItemPreviewGray) {
+        	mView.setViewMode(Sample1View.VIEW_MODE_GRAY);
+        } else if (item == mItemPreviewCanny) {
+        	mView.setViewMode(Sample1View.VIEW_MODE_CANNY);
+        }
         return true;
     }
 }

@@ -1,0 +1,102 @@
+package com.example.cameratest;
+
+import org.opencv.android.InstallCallbackInterface;
+import org.opencv.android.LoaderCallbackInterface;
+import org.opencv.android.OpenCVLoader;
+
+import com.example.cameratest.events.TemplateFrameProcessedEvent;
+import com.example.cameratest.events.TestFrameProcessedEvent;
+import com.example.cameratest.listeners.TemplateFrameProcessedListener;
+import com.example.cameratest.processors.FrameProcessor;
+import com.example.cameratest.processors.template.TemplateFrameProcessor;
+
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Paint.Style;
+import android.graphics.PixelFormat;
+import android.graphics.Rect;
+import android.hardware.*;
+import android.hardware.Camera.*;
+import android.os.*;
+import android.app.*;
+import android.util.*;
+import android.view.*;
+import android.widget.*;
+
+@SuppressWarnings("unused")
+public class MainActivity extends Activity implements TemplateFrameProcessedListener, CameraPreviewCallback {
+	private static final String TAG = "CameraTest::MainActivity";
+	
+	private TemplateFrameProcessor frameProcessor;
+	private CameraPreview mPreview;
+	private SurfaceView mCameraOverlay;
+	private FrameLayout mFrameLayout;
+	
+	private TextView mFpsIndicator;
+	private long mTotalTime = 0;
+	private long mIteration = 0;
+	private Paint mRectPaint = new Paint();
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        frameProcessor = new TemplateFrameProcessor(this);
+        mPreview = new CameraPreview(this, frameProcessor);
+        
+        mFpsIndicator = (TextView)findViewById(R.id.timeIndicator);
+        mFpsIndicator.setTextColor(Color.RED);
+        mRectPaint.setARGB(255, 255, 0, 0);
+        mRectPaint.setStyle(Style.STROKE);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_main, menu);
+        return true;
+    }
+    
+    @Override
+    public void onResume() {
+        super.onResume();
+        mPreview.resume();
+    }
+    
+    @Override
+    public void onPause() {
+        super.onPause();
+        mPreview.pause();
+    }
+    
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mPreview.destroy();
+    }
+    
+    public void cameraPreviewLoaded() {
+    	mCameraOverlay = new SurfaceView(this);
+        mCameraOverlay.getHolder().setFormat(PixelFormat.TRANSPARENT);
+    	
+        mFrameLayout = (FrameLayout)findViewById(R.id.camera_preview);
+    	mFrameLayout.addView(mCameraOverlay);
+    	mFrameLayout.addView(mPreview);
+    }
+    
+    public void onFrameProcessed(TemplateFrameProcessedEvent event) {
+    	mIteration++;
+		mTotalTime += event.time;
+		if (mIteration == 100) {
+    		long fps = 100000 / mTotalTime;
+    		mIteration = mTotalTime = 0;
+    		mFpsIndicator.setText(Long.toString(fps));
+    	}
+		Canvas canvas = mCameraOverlay.getHolder().lockCanvas();
+		if (canvas != null) {
+			canvas.drawRect(event.rect, mRectPaint);
+			mCameraOverlay.getHolder().unlockCanvasAndPost(canvas);
+		}
+	}
+}

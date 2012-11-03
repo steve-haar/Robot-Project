@@ -8,12 +8,10 @@
 <stringAttribute key="com.android.ide.eclipse.adt.target" value="AUTO"/>
 <booleanAttribute key="com.android.ide.eclipse.adt.wipedata" value="false"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/RobotTestApp"/>
-<listEntry value="/RobotTestApp/AndroidManifest.xml"/>
+<listEntry value="/RobotFunctionalityTest"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="4"/>
-<listEntry value="1"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="RobotTestApp"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="RobotFunctionalityTest"/>
 </launchConfiguration>

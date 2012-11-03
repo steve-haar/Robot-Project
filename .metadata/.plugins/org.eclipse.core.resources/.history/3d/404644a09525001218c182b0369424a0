@@ -1,0 +1,7 @@
+package com.example.cameratest;
+
+import android.view.SurfaceView;
+
+public class DrawableView extends SurfaceView {
+
+}

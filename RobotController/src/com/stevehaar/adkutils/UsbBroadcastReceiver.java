@@ -126,7 +126,7 @@ public abstract class UsbBroadcastReceiver extends BroadcastReceiver {
 				mOutputStream.write(buffer);
 			}
 			catch(Exception e) {
-				throw new RuntimeException();
+				
 			}
 		}
     }
@@ -145,7 +145,7 @@ public abstract class UsbBroadcastReceiver extends BroadcastReceiver {
 				mOutputStream.write(buffer);
 			}
 			catch(Exception e) {
-				throw new RuntimeException();
+				
 			}
 		}
     }
@@ -169,34 +169,35 @@ public abstract class UsbBroadcastReceiver extends BroadcastReceiver {
 				mOutputStream.write(buffer);
 			}
 			catch(Exception e) {
-				throw new RuntimeException();
+				
 			}
 		}
     }
     
     private Runnable usbSignalReceived = new Runnable(){
     	public void run(){
-    		try{        		
-        		while(true) {
-    	    		byte[] buffer = new byte[5];
-    	    		mInputStream.read(buffer, 0, 5);
-    	    		byte signal = buffer[0];
+    		byte[] buffer = new byte[5];
+    		
+    		while (true) {
+    			try {
+    				mInputStream.read(buffer, 0, 5);
+    				byte signal = buffer[0];
     	    		
     	    		int value = getIntFromBytes(buffer[1], buffer[2], buffer[3], buffer[4]);
-	        		UsbEvent event = new UsbEvent(this, value);
-	            	for (UsbListener listener : listeners){
-	            		for (byte b : listener.getSignalsToListenFor()){
-	            			if (b == signal){
-	            				listener.usbSignalReceived(event);
-	            				break;
-	            			}
-	            		}
-	            	}
-        		}
-        	}
-        	catch(Exception e){
-        		throw new RuntimeException();
-        	}
+            		UsbEvent event = new UsbEvent(this, value);
+                	for (UsbListener listener : listeners){
+                		for (byte b : listener.getSignalsToListenFor()){
+                			if (b == signal){
+                				listener.usbSignalReceived(event);
+                				break;
+                			}
+                		}
+                	}
+    			}
+    			catch (IOException e) {
+    				break;
+    			}
+    		}
     	}
     };
 

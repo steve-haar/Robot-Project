@@ -1,0 +1,7 @@
+package com.example.cameratest;
+
+import com.example.cameratest.TestFrameProcessedEvent;
+
+public interface TestFrameProcessedListener {
+	public void onFrameProcessed(TestFrameProcessedEvent event);
+}

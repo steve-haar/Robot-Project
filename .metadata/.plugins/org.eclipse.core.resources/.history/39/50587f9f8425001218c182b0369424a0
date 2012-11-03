@@ -1,0 +1,5 @@
+package com.example.cameratest;
+
+public interface FrameProcessedListener {
+	public void onFrameProcessed(long time);
+}

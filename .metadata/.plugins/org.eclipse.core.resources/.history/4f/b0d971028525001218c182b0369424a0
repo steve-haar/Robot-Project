@@ -1,0 +1,10 @@
+package com.example.cameratest;
+
+public class TestFrameProcessedEvent {
+	public long time;
+	
+	public TestFrameProcessedEvent(long time) {
+		this.time = time;
+	}
+
+}

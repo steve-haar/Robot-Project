@@ -3,8 +3,6 @@ package org.opencv.samples.tutorial1;
 import java.io.IOException;
 import java.util.List;
 
-import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -44,9 +42,7 @@ public abstract class SampleViewBase extends SurfaceView implements SurfaceHolde
         return mFrameHeight;
     }
 
-    @TargetApi(11)
-	@SuppressLint("NewApi")
-	public void setPreview() throws IOException {
+    public void setPreview() throws IOException {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
             mCamera.setPreviewTexture( new SurfaceTexture(10) );
         else
@@ -56,7 +52,7 @@ public abstract class SampleViewBase extends SurfaceView implements SurfaceHolde
     public boolean openCamera() {
         Log.i(TAG, "openCamera");
         releaseCamera();
-        mCamera = Camera.open();
+        mCamera = Camera.open(Camera.CameraInfo.CAMERA_FACING_FRONT);
         if(mCamera == null) {
         	Log.e(TAG, "Can't open camera!");
         	return false;
@@ -159,7 +155,7 @@ public abstract class SampleViewBase extends SurfaceView implements SurfaceHolde
     }
 
     /* The bitmap returned by this method shall be owned by the child and released in onPreviewStopped() */
-    protected abstract Bitmap processFrame(byte[] data, int counter);
+    protected abstract Bitmap processFrame(byte[] data);
 
     /**
      * This method is called when the preview process is being started. It is called before the first frame delivered and processFrame is called
@@ -179,14 +175,13 @@ public abstract class SampleViewBase extends SurfaceView implements SurfaceHolde
     public void run() {
         mThreadRun = true;
         Log.i(TAG, "Starting processing thread");
-        int frameNum = 0;
         while (mThreadRun) {
             Bitmap bmp = null;
 
             synchronized (this) {
                 try {
                     this.wait();
-                    bmp = processFrame(mFrame , ++frameNum);
+                    bmp = processFrame(mFrame);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

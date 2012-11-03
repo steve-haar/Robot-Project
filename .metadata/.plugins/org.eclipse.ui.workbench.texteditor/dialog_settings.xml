@@ -2,37 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="257" key="DIALOG_WIDTH"/>
-		<item value="303" key="DIALOG_Y_ORIGIN"/>
+		<item value="282" key="DIALOG_Y_ORIGIN"/>
+		<item value="-654" key="DIALOG_X_ORIGIN"/>
 		<item value="380" key="DIALOG_HEIGHT"/>
-		<item value="117" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="isRegEx"/>
 		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="" key="selection"/>
+		<item value="newT" key="selection"/>
 		<list key="findhistory">
-			<item value="surfacetexture"/>
-			<item value="synch"/>
-			<item value="mholder"/>
-			<item value="retreive"/>
-			<item value="processFrame"/>
-			<item value="getInt"/>
-			<item value="ObjectLocation"/>
-			<item value="100"/>
+			<item value="newt"/>
+			<item value="com.example.cameratest."/>
+			<item value="com.example.cameratest"/>
+			<item value=".lockc"/>
+			<item value="created"/>
+			<item value="lockcan"/>
+			<item value="lockC"/>
+			<item value="gethol"/>
 		</list>
 		<list key="replacehistory">
+			<item value="com.robotProject.video."/>
+			<item value="com.robotProject.video"/>
+			<item value="mFrameSize.height"/>
+			<item value="mFrameSize.width"/>
 			<item value="OldLocation"/>
 			<item value=":width=&quot;120"/>
 			<item value=":width=&quot;100"/>
 			<item value="spin"/>
-			<item value=":width=&quot;80"/>
-			<item value=":width=&quot;90"/>
-			<item value="Right"/>
-			<item value="Left"/>
 		</list>
 	</section>
 </section>

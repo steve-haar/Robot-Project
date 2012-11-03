@@ -1,0 +1,16 @@
+package com.example.cameratest;
+
+import org.opencv.core.Rect;
+
+public class TestFrameProcessedEvent {
+	public long time;
+	public Rect rect;
+	public boolean tracking;
+	
+	public TestFrameProcessedEvent(long time, Rect rect, boolean tracking) {
+		this.time = time;
+		this.rect = rect;
+		this.tracking = tracking;
+	}
+
+}
