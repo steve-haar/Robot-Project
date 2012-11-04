@@ -1,7 +1,0 @@
-package com.example.cameratest;
-
-import com.example.cameratest.TemplateFrameProcessedEvent;
-
-public interface TemplateFrameProcessedListener {
-	public void onFrameProcessed(TemplateFrameProcessedEvent event);
-}

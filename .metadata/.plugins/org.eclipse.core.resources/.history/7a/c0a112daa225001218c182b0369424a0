@@ -1,5 +1,0 @@
-package com.example.cameratest.cameraPreview;
-
-public interface CameraPreviewCallback {
-	public abstract void cameraPreviewLoaded();
-}

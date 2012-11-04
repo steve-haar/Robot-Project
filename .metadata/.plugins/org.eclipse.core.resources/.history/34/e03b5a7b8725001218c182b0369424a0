@@ -1,5 +1,0 @@
-package com.example.cameratest.processors;
-
-public interface FrameProcessor {
-
-}

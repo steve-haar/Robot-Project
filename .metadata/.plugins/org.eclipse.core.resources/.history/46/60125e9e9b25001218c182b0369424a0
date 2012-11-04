@@ -1,8 +1,0 @@
-package com.example.cameratest.processors;
-
-import android.hardware.Camera;
-import android.hardware.Camera.*;
-
-public interface FrameProcessor extends PreviewCallback {
-	public void onPreviewFrame(byte[] data, Camera camera);
-}

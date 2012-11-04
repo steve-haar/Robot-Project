@@ -1,7 +1,0 @@
-package com.example.cameratest;
-
-import android.content.Context;
-
-public abstract class CameraPreviewCallback extends Context {
-	public abstract void cameraPreviewLoaded();
-}

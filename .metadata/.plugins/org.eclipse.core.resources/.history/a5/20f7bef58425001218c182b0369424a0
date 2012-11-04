@@ -1,5 +1,0 @@
-package com.example.cameratest;
-
-public interface TemplateFrameProcessedListener {
-	public void onFrameProcessed(TemplateFrameProcessedEvent event);
-}

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring accessors="true" comment="Delete 2 elements from project &apos;RobotTracker&apos;&#x0D;&#x0A;- Original project: &apos;RobotTracker&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     RobotTracker/src/com.stevehaar.adkutils&#x0D;&#x0A;     RobotTracker/src/com.stevehaar.robot" description="Delete elements" element1="/src&lt;com.stevehaar.robot" element2="/src&lt;com.stevehaar" element3="/src&lt;com.stevehaar.adkutils" element4="/src&lt;com.stevehaar" elements="4" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1350685837367" subPackages="false" version="1.0"/>
-</session>

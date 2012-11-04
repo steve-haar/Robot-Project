@@ -1,7 +1,0 @@
-package com.example.cameratest;
-
-import android.view.View;
-
-public class DrawableView extends View {
-
-}

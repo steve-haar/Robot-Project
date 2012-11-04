@@ -1,5 +1,0 @@
-
-
-public interface FrameProcessedListener {
-	public void onFrameProcessed(long time);
-}
