@@ -12,6 +12,10 @@ public abstract class FrameProcessor implements IFrameProcessor {
 		ready();
 	}
 	
+	public android.hardware.Camera.Size getFrameSize() {
+		return mFrameSize;
+	}
+	
 	public abstract void onPreviewFrame(byte[] data, Camera camera);
 	public abstract void ready();
 	

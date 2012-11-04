@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TestApp</string>
+    <string name="app_name">Robot Functionality Test</string>
     <string name="frontSonar">Front Sonar</string>
     <string name="rearSonar">Rear Sonar</string>
     

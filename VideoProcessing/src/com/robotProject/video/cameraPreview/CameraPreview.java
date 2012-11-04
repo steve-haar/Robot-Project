@@ -1,6 +1,7 @@
 package com.robotProject.video.cameraPreview;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.opencv.android.InstallCallbackInterface;
 import org.opencv.android.LoaderCallbackInterface;
@@ -43,7 +44,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
             mCamera.setPreviewDisplay(holder);
             mCamera.startPreview();
         } catch (IOException e) {
-            Log.d(TAG, "Error setting camera preview: " + e.getMessage());
+            Log.e(TAG, "Error setting camera preview: " + e.getMessage());
         }
     }
 
@@ -86,7 +87,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
             mCamera.setPreviewCallbackWithBuffer(mFrameProcessor);
 
         } catch (Exception e){
-            Log.d(TAG, "Error starting camera preview: " + e.getMessage());
+            Log.e(TAG, "Error starting camera preview: " + e.getMessage());
         }
     }
     
@@ -104,6 +105,9 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 	        // deprecated setting, but required on Android versions prior to 3.0
 	        mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
         	mFrameProcessor.setCamera(mCamera);
+        	try {
+    			Thread.sleep(1000);
+    		} catch (Exception e) { }
         	mContext.cameraPreviewLoaded();
 		}
 	}

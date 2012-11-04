@@ -1,2 +1,2 @@
 eclipse.preferences.version=1
-task-tag-projects-already-scanned=OpenCV Library - 2.4.2,RobotController,RobotTestApp,RobotTracker,OpenCV Sample - 15-puzzle,OpenCV Tutorial 1 - Add OpenCV
+task-tag-projects-already-scanned=OpenCV Library - 2.4.2,RobotController,RobotFunctionalityTest,VideoProcessing,TemplateTracker

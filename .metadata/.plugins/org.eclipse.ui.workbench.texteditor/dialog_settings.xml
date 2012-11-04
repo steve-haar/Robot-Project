@@ -13,16 +13,16 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="newT" key="selection"/>
+		<item value="" key="selection"/>
 		<list key="findhistory">
-			<item value="newt"/>
-			<item value="com.example.cameratest."/>
-			<item value="com.example.cameratest"/>
-			<item value=".lockc"/>
-			<item value="created"/>
-			<item value="lockcan"/>
-			<item value="lockC"/>
-			<item value="gethol"/>
+			<item value="hello"/>
+			<item value="h"/>
+			<item value="fixed"/>
+			<item value="trans"/>
+			<item value="previewload"/>
+			<item value="surfacecre"/>
+			<item value="set"/>
+			<item value="log"/>
 		</list>
 		<list key="replacehistory">
 			<item value="com.robotProject.video."/>
